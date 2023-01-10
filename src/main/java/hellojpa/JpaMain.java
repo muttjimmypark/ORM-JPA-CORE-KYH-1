@@ -19,20 +19,22 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
 
-        /**
-         * 코드 작성 부분 시작 - db와 주고받는 내용
-         */
-        Member member = new Member();
-        member.setId(2L);
-        member.setName("HelloB");
+        try {
+            Member member = new Member();
+            member.setId(2L);
+            member.setName("HelloB");
 
-        em.persist(member);
-        /**
-         * 코드 작성 부분 끝
-         */
+            em.persist(member);
 
-        tx.commit();
-        em.close();
+            tx.commit();
+
+        } catch (Exception e) {
+            tx.rollback();
+
+        } finally {
+            em.close();
+
+        }
         emf.close();
     }
 }
