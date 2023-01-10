@@ -20,11 +20,19 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Member member = new Member();
-            member.setId(2L);
-            member.setName("HelloB");
+            //생성
+//            Member member = new Member();
+//            member.setId(2L);
+//            member.setName("HelloB");
 
-            em.persist(member);
+            //수정
+            Member foundMember = em.find(Member.class, 1L);
+            foundMember.setName("HelloJPA");
+//            em.persist(foundMember); 필요없다
+            /**
+             * jpa를 통해 가져온 엔티티의 변경사항은
+             * 커밋시점에 확인되어 update쿼리가 알아서 날아가게 된다
+             */
 
             tx.commit();
 
@@ -35,6 +43,8 @@ public class JpaMain {
             em.close();
 
         }
+
+
         emf.close();
     }
 }
