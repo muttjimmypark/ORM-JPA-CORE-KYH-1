@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.util.List;
 
 public class JpaMain {
 
@@ -26,12 +27,25 @@ public class JpaMain {
 //            member.setName("HelloB");
 
             //수정
-            Member foundMember = em.find(Member.class, 1L);
-            foundMember.setName("HelloJPA");
-//            em.persist(foundMember); 필요없다
+//            Member foundMember = em.find(Member.class, 1L);
+//            foundMember.setName("HelloJPA");
             /**
+             * em.persist(foundMember); 필요없다
              * jpa를 통해 가져온 엔티티의 변경사항은
              * 커밋시점에 확인되어 update쿼리가 알아서 날아가게 된다
+             */
+
+            //jpql
+            List<Member> result = em.createQuery("select m from Member as m", Member.class)
+                    .setFirstResult(1)
+                    .setMaxResults(5)
+                    .getResultList();
+            for (Member member : result) {
+                System.out.println("member.getName() = " + member.getName());
+            }
+            /**
+             * setFirstResult(n) : idx n번 부터
+             * setMaxResult(m) : m개씩 호출한다
              */
 
             tx.commit();
