@@ -16,6 +16,13 @@
      * member2 = memberDAO.getMember(id)
      * member1 != member2
 
+* JPA를 사용해야하는 이유
+  1. SQL 중심적인 개발에서 객체 중심으로 개발
+  2. 생산성, 유지보수, 성능
+  3. 패러다임의 불일치 해결
+  4. 데이터 접근 추상화와 벤더 독립성
+  5. 표준
+
 ===
 
 * persistence.xml 
