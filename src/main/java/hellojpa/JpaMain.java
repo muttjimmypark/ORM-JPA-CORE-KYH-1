@@ -48,6 +48,7 @@ public class JpaMain {
              * setMaxResult(m) : m개씩 호출한다
              */
 
+
             tx.commit();
 
         } catch (Exception e) {
