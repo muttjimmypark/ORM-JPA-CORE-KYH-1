@@ -36,13 +36,13 @@ public class JpaMain {
              */
 
             //jpql
-            List<Member> result = em.createQuery("select m from Member as m", Member.class)
-                    .setFirstResult(1)
-                    .setMaxResults(5)
-                    .getResultList();
-            for (Member member : result) {
-                System.out.println("member.getName() = " + member.getName());
-            }
+//            List<Member> result = em.createQuery("select m from Member as m", Member.class)
+//                    .setFirstResult(1)
+//                    .setMaxResults(5)
+//                    .getResultList();
+//            for (Member member : result) {
+//                System.out.println("member.getName() = " + member.getName());
+//            }
             /**
              * setFirstResult(n) : idx n번 부터
              * setMaxResult(m) : m개씩 호출한다
