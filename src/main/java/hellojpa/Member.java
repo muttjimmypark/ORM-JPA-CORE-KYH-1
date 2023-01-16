@@ -10,16 +10,26 @@ import java.util.Date;
 
 @Entity
 //@Table(name = "MBR")
+//@SequenceGenerator(name = "member_seq_generator", sequenceName = "member_seq")
+//@TableGenerator(
+//        name = "member_table_generator",
+//        table = "my_seqences",
+//        pkColumnValue = "member_seq", allocationSize = 1)
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Member {
 
+    // Long형 + 대체키 + 키 생성전략 사용을 권장 (비즈니스에 사용되는값을 활용하는것은 비추)
     @Id
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "member_table_generator")
     private Long id;
 
     @Column(name = "name", nullable = false)
     private String userName;
+
+
+    /* 필드 매핑 예제 시작
 
     private Integer age;
 
@@ -44,4 +54,6 @@ public class Member {
     // 컬럼에 매칭하고싶지않은 필드
     @Transient
     private int temp;
+
+    필드 매핑 예제 끝 */
 }
