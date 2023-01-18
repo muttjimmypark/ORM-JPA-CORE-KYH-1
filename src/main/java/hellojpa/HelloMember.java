@@ -6,9 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Date;
 
-@Entity
+//@Entity
 //@Table(name = "MBR")
 //@SequenceGenerator(name = "member_seq_generator", sequenceName = "member_seq")
 //@TableGenerator(
@@ -18,7 +17,7 @@ import java.util.Date;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Member {
+public class HelloMember {
 
     // Long형 + 대체키 + 키 생성전략 사용을 권장 (비즈니스에 사용되는값을 활용하는것은 비추)
     @Id
