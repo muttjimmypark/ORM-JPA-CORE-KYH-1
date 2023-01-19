@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e80a5db7-5d1f-4fc0-8bea-37e2eb6c94da" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hellojpa/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hellojpa/HelloMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hellojpa/JpaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hellojpa/TestMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,9 +52,9 @@
       <recent name="hellojpa" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.jpabook.jpashop.JpaMain">
-    <configuration name="JpaMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="hellojpa.JpaMain" />
+  <component name="RunManager" selected="애플리케이션.TestMain">
+    <configuration name="TestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hellojpa.TestMain" />
       <module name="ex1-hello-jpa" />
       <extension name="coverage">
         <pattern>
@@ -81,8 +81,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.TestMain" />
         <item itemvalue="애플리케이션.jpabook.jpashop.JpaMain" />
-        <item itemvalue="애플리케이션.JpaMain" />
       </list>
     </recent_temporary>
   </component>
