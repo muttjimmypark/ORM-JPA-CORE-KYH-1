@@ -3,10 +3,7 @@ package hellojpa;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -23,7 +20,11 @@ public class TestMember {
 
     private int age;
 
-    @Column(name = "TTEAM_ID")
-    private Long teamId;
+//    @Column(name = "TTEAM_ID")
+//    private Long teamId;
+    // 단방향 연관관계 매핑
+    @ManyToOne
+    @JoinColumn(name = "TTEAM_ID")
+    private TestTeam team;
 
 }

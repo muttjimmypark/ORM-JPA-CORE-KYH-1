@@ -49,8 +49,27 @@ public class TestMain {
 
 
             /**
+             * 연관관계 매핑 기초  [객체 개념에서의 참조 -매핑- 테이블 개념에서의 외래키]
+             * 매핑이 필요한 이유 - 객체를 테이블에 맞춰 데이터중심으로 모델링하면, 협력관계를 만들 수 없다.
+             */
+//            TestTeam team = new TestTeam();
+//            team.setName("TeamA");
+//            em.persist(team);
+//
+//            TestMember member = new TestMember();
+//            member.setName("member1");
+//            member.setTeamId(team.getId());
+//            em.persist(member);
+//
+//            // 객체지향스럽지 않은 방식으로 호출할수 밖에 없다
+//            TestMember findMember = em.find(TestMember.class, member.getId());
+//            Long findTeamId = findMember.getTeamId();
+//            TestTeam findTeam = em.find(TestTeam.class, findTeamId);
+
+
+            /**
              * 연관관계 매핑 기초 - 단방향 연관관계
-             * 객체를 테이블에 맞춰 데이터중심으로 모델링하면, 협력관계를 만들 수 없다.
+             * 연관관계가 매핑되면 객체지향 스러운 호출이 가능해진다
              */
             TestTeam team = new TestTeam();
             team.setName("TeamA");
@@ -58,13 +77,16 @@ public class TestMain {
 
             TestMember member = new TestMember();
             member.setName("member1");
-            member.setTeamId(team.getId());
+            member.setTeam(team);
             em.persist(member);
 
-            // 객체지향스럽지 않은 방식으로 호출할수 밖에 없다
             TestMember findMember = em.find(TestMember.class, member.getId());
-            Long findTeamId = findMember.getTeamId();
-            TestTeam findTeam = em.find(TestTeam.class, findTeamId);
+            TestTeam findTeam = findMember.getTeam();
+            System.out.println("findTeam.getName() = " + findTeam.getName());
+
+            //연관관계 수정도 객체지향적으로 간단한 적용이 가능
+//            TestTeam anotherTeam = em.find(TestTeam.class, 100L);
+//            findMember.setTeam(anotherTeam);
 
 
             tx.commit();
